@@ -1,6 +1,5 @@
-// import React,  from 'react';
-import { RootState } from "../Redux/store/store";
 import { useSelector } from "react-redux";
+import { RootState } from "../Redux/store/store";
 
 const CounterState = () => {
   const { count } = useSelector((state: RootState) => state.count);
