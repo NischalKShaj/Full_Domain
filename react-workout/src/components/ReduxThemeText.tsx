@@ -11,7 +11,7 @@ const ReduxThemeText = () => {
           background: theme === "light" ? "black" : "white",
         }}
       >
-        click to change the theme
+        click the button to change the theme
       </h2>
     </div>
   );

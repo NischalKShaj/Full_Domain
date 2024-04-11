@@ -1,14 +1,16 @@
 import { useDispatch } from "react-redux";
-import { toggleTheme } from "../Redux/slice/themeSlice";
+import { toggle } from "../Redux/slice/themeSlice";
 
 const ReduxThemeToggle = () => {
   const dispatch = useDispatch();
-  const handleChange = () => {
-    dispatch(toggleTheme());
+
+  const handleClick = () => {
+    dispatch(toggle());
   };
+
   return (
     <div>
-      <button onClick={handleChange}>change Color</button>
+      <button onClick={handleClick}>click</button>
     </div>
   );
 };

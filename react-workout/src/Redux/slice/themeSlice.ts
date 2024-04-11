@@ -9,14 +9,15 @@ const initialState: InitialState = {
 };
 
 const themeSlice = createSlice({
-  name: "themeSelector",
+  name: "theme",
   initialState,
   reducers: {
-    toggleTheme: (state) => {
+    toggle: (state) => {
       state.theme = state.theme === "light" ? "dark" : "light";
     },
   },
 });
 
-export const { toggleTheme } = themeSlice.actions;
+export const { toggle } = themeSlice.actions;
+
 export default themeSlice.reducer;
