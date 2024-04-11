@@ -1,9 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import counterReducer from "../slice/counterSlice";
+import themeReducer from "../slice/themeSlice";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-const rootReducers = combineReducers({ count: counterReducer });
+const rootReducers = combineReducers({
+  count: counterReducer,
+  theme: themeReducer,
+});
 
 const persistConfig = {
   key: "root",

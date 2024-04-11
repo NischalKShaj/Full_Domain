@@ -1,9 +1,10 @@
 import React, { useMemo, useState } from "react";
 
 const Fibonacci = () => {
-  const [input, setInput] = useState("");
   const [fib, setFib] = useState(0);
-  const fibonnaci = (num: number): number => {
+  const [input, setInput] = useState("");
+
+  const fibonacci = (num: number): number => {
     if (num <= 1) {
       return num;
     }
@@ -17,23 +18,23 @@ const Fibonacci = () => {
     return b;
   };
 
-  const memorizedFib = useMemo(() => {
-    return fibonnaci(parseInt(input));
+  const memorize = useMemo(() => {
+    return fibonacci(parseInt(input));
   }, [input]);
 
-  const handelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
 
-  const handleFib = () => {
-    setFib(memorizedFib);
+  const handleClick = () => {
+    setFib(memorize);
   };
 
   return (
     <div>
-      <input type="text" onChange={handelChange} />
-      <button onClick={handleFib}>enter</button>
-      <p>Fibonacci is {fib}</p>
+      <input type="text" onChange={handleChange} />
+      <button onClick={handleClick}>enter</button>
+      <h1>Fibonacci:{fib}</h1>
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import { createContext } from "react";
 
-interface CreateContext {
+interface CreateCounterContext {
   count: number;
   increment: () => void;
   decrement: () => void;
 }
 
-export const CounterContext = createContext<CreateContext>({
+export const CounterContext = createContext<CreateCounterContext>({
   count: 0,
   increment: () => {},
   decrement: () => {},

@@ -6,16 +6,15 @@ const Counter = () => {
   const increment = () => {
     setCount(count + 1);
   };
-
   const decrement = () => {
     setCount(count - 1);
   };
 
   return (
     <div>
-      <p>{count}</p>
-      <button onClick={decrement}>-</button>
+      <p>count:{count}</p>
       <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
     </div>
   );
 };

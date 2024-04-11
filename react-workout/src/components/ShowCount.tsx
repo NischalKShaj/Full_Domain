@@ -5,7 +5,7 @@ const ShowCount = () => {
   const { count } = useContext(CounterContext);
   return (
     <div>
-      <p>Count:{count}</p>
+      <h1>Count:{count}</h1>
     </div>
   );
 };
