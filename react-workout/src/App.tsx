@@ -1,7 +1,10 @@
 // import { useState } from "react";
 import "./App.css";
-import ReduxThemeText from "./components/ReduxThemeText";
-import ReduxThemeToggle from "./components/ReduxThemeToggle";
+import AddTaskTodo from "./components/AddTaskTodo";
+import ShowTask from "./components/ShowTask";
+// import Test from "./components/Test";
+//import ReduxThemeText from "./components/ReduxThemeText";
+// import ReduxThemeToggle from "./components/ReduxThemeToggle";
 // import Counter from "./components/Counter";
 // import ShowCustomHook from "./components/ShowCustomHook";
 // import Timer from "./components/Timer";
@@ -20,8 +23,8 @@ import ReduxThemeToggle from "./components/ReduxThemeToggle";
 const App = () => {
   return (
     <div>
-      <ReduxThemeText />
-      <ReduxThemeToggle />
+      <AddTaskTodo />
+      <ShowTask />
     </div>
   );
 };
