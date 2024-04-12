@@ -1,7 +1,9 @@
 // import { useState } from "react";
+import ShowCounter from "./components/ShowCounter";
 import "./App.css";
-import AddTaskTodo from "./components/AddTaskTodo";
-import ShowTask from "./components/ShowTask";
+import CounterApplication from "./components/CounterApplication";
+// import AddTaskTodo from "./components/AddTaskTodo";
+// import ShowTask from "./components/ShowTask";
 // import Test from "./components/Test";
 //import ReduxThemeText from "./components/ReduxThemeText";
 // import ReduxThemeToggle from "./components/ReduxThemeToggle";
@@ -23,8 +25,8 @@ import ShowTask from "./components/ShowTask";
 const App = () => {
   return (
     <div>
-      <AddTaskTodo />
-      <ShowTask />
+      <ShowCounter />
+      <CounterApplication />
     </div>
   );
 };
