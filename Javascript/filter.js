@@ -24,3 +24,17 @@ const oddArr = arr.filter((value) => {
   }
 });
 console.log(oddArr);
+
+// for finding the student with mark greater than 50
+
+const student = [
+  { id: 1, name: "Alice", mark: 60 },
+  { id: 2, name: "Bob", mark: 50 },
+  { id: 3, name: "Charlie", mark: 89 },
+  { id: 4, name: "Darwin", mark: 49 },
+];
+
+const pass = student.filter((student) => student.mark > 50);
+const fail = student.filter((student) => student.mark <= 50);
+console.log("passed", pass);
+console.log("failed", fail);

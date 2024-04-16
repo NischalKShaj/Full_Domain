@@ -1,18 +1,33 @@
-// converting a promise to async await
-const test = async () => {
+// converting a resolved promise to async await
+const resolvedPromise = async () => {
   try {
-    const promise = await new Promise((resolve, reject) => {
+    const res = await new Promise((resolve, rejcet) => {
       setTimeout(() => {
-        resolve("data fetched....");
+        resolve("data fetched...");
       }, 1000);
     });
-    console.log(promise);
+    console.log("resolved promise", res);
   } catch (error) {
-    console.log(error);
+    console.log("error", error);
   }
 };
 
-test();
+resolvedPromise();
+
+// converting a rejected promise to async await
+const rejectPromise = async () => {
+  try {
+    await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject("data fetching failed...");
+      }, 2000);
+    });
+  } catch (error) {
+    console.log("error", error);
+  }
+};
+
+rejectPromise();
 
 // example of async await
 const postlogin = async (req, res) => {

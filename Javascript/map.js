@@ -6,3 +6,14 @@ const farenheight = temprature.map((value) => {
 });
 
 console.log(farenheight);
+
+const product = [
+  { id: 1, name: "apple", price: 100 },
+  { id: 2, name: "orange", price: 80 },
+  { id: 3, name: "banana", price: 60 },
+];
+
+const productname = product.map((product) => product.name);
+console.log(productname);
+const price = product.map((product) => product.price);
+console.log(price);
