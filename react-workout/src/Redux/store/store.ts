@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import counterReducer from "../slice/counterSlice";
 import themeReducer from "../slice/themeSlice";
 import taskReducer from "../slice/taskSlice";
+import tasksReducer from "../slice/todoSlice";
 import countReducer from "../slice/newSlice";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
@@ -11,6 +12,7 @@ const rootReducers = combineReducers({
   theme: themeReducer,
   task: taskReducer,
   counter: countReducer,
+  tasks: tasksReducer,
 });
 
 const persistConfig = {

@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { CounterContext } from "../context/ContextProvider";
+import { contextProvider } from "../context/ContextProvider";
 
 const ShowCount = () => {
-  const { count } = useContext(CounterContext);
+  const { count } = useContext(contextProvider);
   return (
     <div>
-      <h1>Count:{count}</h1>
+      <h4>Count:{count}</h4>
     </div>
   );
 };

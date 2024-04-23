@@ -1,7 +1,8 @@
 // import { useState } from "react";
-import ShowCounter from "./components/ShowCounter";
 import "./App.css";
-import CounterApplication from "./components/CounterApplication";
+import TodoTask from "./components/TodoTask";
+// import ShowCounter from "./components/ShowCounter";
+// import CounterApplication from "./components/CounterApplication";
 // import AddTaskTodo from "./components/AddTaskTodo";
 // import ShowTask from "./components/ShowTask";
 // import Test from "./components/Test";
@@ -11,7 +12,7 @@ import CounterApplication from "./components/CounterApplication";
 // import ShowCustomHook from "./components/ShowCustomHook";
 // import Timer from "./components/Timer";
 // import CounterButton from "./components/CounterButton";
-// import { CounterContext } from "./context/ContextProvider";
+// import { contextProvider } from "./context/ContextProvider";
 // import ShowCount from "./components/ShowCount";
 // import Button from "./components/Button";
 // import CounterState from "./components/CounterState";
@@ -25,8 +26,7 @@ import CounterApplication from "./components/CounterApplication";
 const App = () => {
   return (
     <div>
-      <ShowCounter />
-      <CounterApplication />
+      <TodoTask />
     </div>
   );
 };

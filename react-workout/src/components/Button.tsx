@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { CounterContext } from "../context/ContextProvider";
+import React, { useContext } from "react";
+import { contextProvider } from "../context/ContextProvider";
 
 const Button = () => {
-  const { increment, decrement } = useContext(CounterContext);
+  const { increment, decrement } = useContext(contextProvider);
   return (
     <div>
       <button onClick={increment}>increment</button>

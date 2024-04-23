@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { decrement, increment } from "../Redux/slice/counterSlice";
+import { increment, decrement } from "../Redux/slice/counterSlice";
 
 const CounterButton = () => {
   const dispatch = useDispatch();
@@ -11,8 +11,8 @@ const CounterButton = () => {
   };
   return (
     <div>
-      <button onClick={handleInc}>increment</button>
-      <button onClick={handleDec}>decrement</button>
+      <button onClick={handleInc}>+</button>
+      <button onClick={handleDec}>-</button>
     </div>
   );
 };
