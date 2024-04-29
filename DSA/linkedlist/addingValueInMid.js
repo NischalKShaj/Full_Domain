@@ -1,38 +1,44 @@
 // file to show how to add value to the middle of the list
+
 class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
+
 class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.length = 0;
+    this.size = 0;
   }
-  addValue(value) {
+  insert(value) {
     const newNode = new Node(value);
     if (this.head === null) {
       this.head = newNode;
       this.tail = newNode;
-      this.length++;
+      this.size++;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
-      this.length++;
+      this.size++;
     }
   }
-  middle(value) {
-    const mid = Math.floor(this.length / 2);
-    this.addAtMid(mid, value);
+  mid(value) {
+    const middle = Math.floor(this.size / 2);
+    this.insertAtMid(value, middle);
   }
-  addAtMid(mid, value) {
+  insertAtMid(value, middle) {
     const newNode = new Node(value);
-    let current = this.head;
+    if (this.head === null) {
+      console.log("the list is invalid");
+      return false;
+    }
     let prev = null;
+    let current = this.head;
     let index = 0;
-    while (index < mid) {
+    while (index < middle) {
       prev = current;
       current = current.next;
       index++;
@@ -50,10 +56,11 @@ class LinkedList {
 }
 
 const list = new LinkedList();
-list.addValue(1);
-list.addValue(2);
-list.addValue(4);
-list.addValue(5);
+list.insert(1);
+list.insert(2);
+list.insert(4);
+list.insert(5);
+list.insert(6);
 list.display();
-list.middle(3);
+list.mid(3);
 list.display();

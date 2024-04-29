@@ -1,4 +1,5 @@
 // file to show how to remove duplicate from the linked list
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -11,23 +12,21 @@ class LinkedList {
     this.head = null;
     this.tail = null;
   }
-  addValue(value) {
+  insert(value) {
     const newNode = new Node(value);
     if (this.head === null) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
+      this.head = this.tail = newNode;
     }
+    this.tail.next = newNode;
+    this.tail = newNode;
   }
   removeDuplicate() {
     if (this.head === null) {
-      console.log("list is empty");
+      console.log("invalid list ");
       return false;
     }
-    let current = this.head;
     let prev = null;
+    let current = this.head;
     let set = new Set();
     while (current !== null) {
       if (set.has(current.value)) {
@@ -49,12 +48,12 @@ class LinkedList {
 }
 
 const list = new LinkedList();
-list.addValue(1);
-list.addValue(2);
-list.addValue(3);
-list.addValue(3);
-list.addValue(4);
-list.addValue(5);
+list.insert(1);
+list.insert(2);
+list.insert(3);
+list.insert(3);
+list.insert(4);
+list.insert(5);
 list.display();
 list.removeDuplicate();
 console.log("list after removing duplicates");

@@ -1,12 +1,12 @@
 // import { useState } from "react";
 import "./App.css";
-import TodoTask from "./components/TodoTask";
+// import TodoTask from "./components/TodoTask";
 // import ShowCounter from "./components/ShowCounter";
 // import CounterApplication from "./components/CounterApplication";
 // import AddTaskTodo from "./components/AddTaskTodo";
 // import ShowTask from "./components/ShowTask";
 // import Test from "./components/Test";
-//import ReduxThemeText from "./components/ReduxThemeText";
+// import ReduxThemeText from "./components/ReduxThemeText";
 // import ReduxThemeToggle from "./components/ReduxThemeToggle";
 // import Counter from "./components/Counter";
 // import ShowCustomHook from "./components/ShowCustomHook";
@@ -18,7 +18,7 @@ import TodoTask from "./components/TodoTask";
 // import CounterState from "./components/CounterState";
 // import Todo from "./components/Todo";
 // import Example from "./components/Example";
-// import Fibonacci from "./components/Fibonacci";
+import Fibonacci from "./components/Fibonacci";
 // import { ThemeContext } from "./context/ThemeContext";
 // import ThemeButton from "./components/ThemeButton";
 // import ThemeText from "./components/ThemeText";
@@ -26,7 +26,7 @@ import TodoTask from "./components/TodoTask";
 const App = () => {
   return (
     <div>
-      <TodoTask />
+      <Fibonacci />
     </div>
   );
 };

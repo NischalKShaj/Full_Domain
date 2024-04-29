@@ -1,4 +1,5 @@
-// file to show how to add a list in the linked list
+// file to show how to add a value in the linked list
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -11,29 +12,29 @@ class LinkedList {
     this.head = null;
     this.tail = null;
   }
-  addValue(value) {
+  insert(value) {
     const newNode = new Node(value);
     if (this.head === null) {
-      this.head = newNode;
-      this.tail = newNode;
+      this.head = this.tail = newNode;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
     }
   }
   display() {
-    let currentValue = this.head;
-    while (currentValue !== null) {
-      console.log(currentValue.value);
-      currentValue = currentValue.next;
+    let current = this.head;
+    while (current !== null) {
+      console.log(current.value);
+      current = current.next;
     }
   }
 }
 
 const list = new LinkedList();
-list.addValue(4);
-list.addValue(5);
-list.addValue(7);
-list.addValue(2);
-list.addValue(1);
+list.insert(1);
+list.insert(2);
+list.insert(3);
+list.insert(4);
+list.insert(5);
+list.insert(6);
 list.display();

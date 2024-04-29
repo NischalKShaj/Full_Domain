@@ -1,4 +1,5 @@
-// adding value at the begining of the linked list
+// adding value at the beginning of the linked list
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -11,7 +12,7 @@ class LinkedList {
     this.head = null;
     this.tail = null;
   }
-  addValue(value) {
+  insert(value) {
     const newNode = new Node(value);
     if (this.head === null) {
       this.head = newNode;
@@ -21,26 +22,25 @@ class LinkedList {
       this.tail = newNode;
     }
   }
-  addBeg(value) {
+  insertBeg(value) {
     const newNode = new Node(value);
     newNode.next = this.head;
     this.head = newNode;
   }
   display() {
-    let currentValue = this.head;
-    while (currentValue !== null) {
-      console.log(currentValue.value);
-      currentValue = currentValue.next;
+    let current = this.head;
+    while (current !== null) {
+      console.log(current.value);
+      current = current.next;
     }
   }
 }
-
 const list = new LinkedList();
-list.addValue(1);
-list.addValue(2);
-list.addValue(3);
-list.addValue(4);
-list.addValue(5);
+list.insert(1);
+list.insert(2);
+list.insert(3);
+list.insert(4);
+list.insert(5);
 list.display();
-list.addBeg(0);
+list.insertBeg(0);
 list.display();

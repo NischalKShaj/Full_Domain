@@ -4,7 +4,7 @@ const Fibonacci = () => {
   const [fib, setFib] = useState(0);
   const [input, setInput] = useState("");
 
-  const fibonacci = (num: number): number => {
+  const fibonacci = (num: number) => {
     if (num <= 1) {
       return num;
     }
@@ -28,13 +28,14 @@ const Fibonacci = () => {
 
   const handleClick = () => {
     setFib(memorize);
+    setInput("");
   };
 
   return (
     <div>
-      <input type="text" onChange={handleChange} />
-      <button onClick={handleClick}>enter</button>
-      <h1>Fibonacci:{fib}</h1>
+      <input type="text" onChange={handleChange} value={input} />
+      <button onClick={handleClick}>find</button>
+      <h3>{fib}</h3>
     </div>
   );
 };

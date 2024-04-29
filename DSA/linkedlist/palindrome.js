@@ -1,16 +1,18 @@
 // file to check whether the list is palindrome or not
+
 class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
+
 class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
   }
-  addValue(value) {
+  insert(value) {
     const newNode = new Node(value);
     if (this.head === null) {
       this.head = newNode;
@@ -23,18 +25,18 @@ class LinkedList {
   isPalindrome() {
     if (this.head === null) {
       console.log("invalid list");
-      return true;
+      return false;
     }
     let current = this.head;
-    let arr = [];
+    let check = [];
     while (current !== null) {
-      arr.push(current.value);
+      check.push(current.value);
       current = current.next;
     }
     let left = 0;
-    let right = arr.length - 1;
+    let right = check.length - 1;
     while (left < right) {
-      if (arr[left] !== arr[right]) {
+      if (check[left] !== check[right]) {
         return false;
       }
       left++;
@@ -45,9 +47,9 @@ class LinkedList {
 }
 
 const list = new LinkedList();
-list.addValue(1);
-list.addValue(0);
-list.addValue(3);
-list.addValue(2);
-list.addValue(1);
+list.insert(1);
+list.insert(2);
+list.insert(3);
+list.insert(2);
+list.insert(1);
 console.log(list.isPalindrome());
