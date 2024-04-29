@@ -1,10 +1,10 @@
 // reversing the string using recursion
 
-const reverse = (word) => {
-  if (word.length <= 1) {
-    return word;
+const reverse = (str) => {
+  if (str.length <= 1) {
+    return str;
   }
-  return word.slice(-1) + reverse(word.slice(0, -1));
+  return reverse(str.slice(-1)) + reverse(str.slice(0, -1));
 };
 
 const word = "hello";

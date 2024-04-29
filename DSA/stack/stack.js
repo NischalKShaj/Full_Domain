@@ -1,4 +1,5 @@
-// implemention stack and the basic operation in stack
+// implementation stack and the basic operation in stack
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -22,15 +23,11 @@ class Stack {
   pop() {
     if (this.top === null) {
       console.log("stack underflow");
-      return;
+      return false;
     }
     this.top = this.top.next;
   }
   peek() {
-    if (this.top === null) {
-      console.log("stack underflow");
-      return null;
-    }
     return this.top.value;
   }
   display() {

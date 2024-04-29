@@ -5,15 +5,16 @@ const reverse = (word) => {
   for (const char of word) {
     stack.push(char);
   }
-  let newArr = [];
-
-  while (stack.length > 0) {
-    let popped = stack.pop();
-    newArr.push(popped);
+  let revArr = [];
+  for (let i = 0; i < word.length; i++) {
+    revArr.push(stack.pop());
   }
-  return newArr.join("");
+  // same thing with while loop
+  // while (stack.length > 0) {
+  //   revArr.push(stack.pop());    // remove the comments and comment the for loop and check the iteration //
+  // }
+  return revArr.join("");
 };
-
 let word = "hello";
 let rev = reverse(word);
 console.log(rev);

@@ -1,8 +1,8 @@
 // reversing a string
 
-let reverse = (word) => {
-  let words = word.map((text) => {
-    return text.split("").reverse().join("");
+const reverse = (word) => {
+  let words = word.map((rev) => {
+    return rev.split("").reverse().join("");
   });
   return words;
 };

@@ -32,14 +32,12 @@ class LinkedList {
     }
     let current = this.head;
     let prev = null;
-
-    while (current.value !== value && current !== null) {
+    while (current !== null && current.value !== value) {
       prev = current;
       current = current.next;
     }
     if (current === null) {
-      console.log("node not found");
-      return;
+      return false;
     }
     prev.next = current.next;
   }
@@ -52,38 +50,39 @@ class LinkedList {
   }
   // removing the middle element
   mid() {
-    const middle = Math.floor(this.length / 2);
-    this.removeMid(middle);
+    const mid = Math.floor(this.length / 2);
+    this.removeMid(mid);
   }
   removeMid(mid) {
     if (this.head === null) {
-      console.log("list invalid");
-      return false;
+      return null;
     }
     let current = this.head;
     let index = 0;
-    while (index < mid - 1) {
+    while (current !== null && index < mid - 1) {
       current = current.next;
       index++;
+    }
+    if (current === null) {
+      return false;
     }
     current.next = current.next.next;
   }
   // removing value from a specific position
   removePos(pos) {
-    if (this.current === null) {
+    if (this.head === null) {
       return false;
     }
     let current = this.head;
-    let prev = null;
     let index = 0;
-    while (current !== null && index < pos) {
+    let prev = null;
+    while (index < pos && current !== null) {
       prev = current;
       current = current.next;
       index++;
     }
     if (current === null) {
-      console.log("value not found");
-      return;
+      return false;
     }
     prev.next = current.next;
   }
@@ -103,11 +102,11 @@ list.insert(3);
 list.insert(4);
 list.insert(5);
 list.display();
-list.removeVal(5);
-list.display();
+// list.removeVal(5);
+// list.display();
 // list.removeHead();
 // list.display();
 // list.mid();
 // list.display();
-// list.removePos(1);
-// list.display();
+list.removePos(1);
+list.display();
