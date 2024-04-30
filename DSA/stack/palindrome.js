@@ -23,18 +23,18 @@ class Stack {
   isPalindrome() {
     if (this.top === null) {
       console.log("stack underflow");
-      return null;
+      return false;
     }
-    let palindrome = [];
+    let check = [];
     let current = this.top;
     while (current !== null) {
-      palindrome.push(current.value);
+      check.push(current.value);
       current = current.next;
     }
     let left = 0;
-    let right = palindrome.length - 1;
+    let right = check.length - 1;
     while (left < right) {
-      if (palindrome[left] !== palindrome[right]) {
+      if (check[left] !== check[right]) {
         return false;
       }
       left++;
@@ -50,11 +50,12 @@ class Stack {
     }
   }
 }
+
 const stack = new Stack();
 stack.push(1);
 stack.push(2);
 stack.push(3);
-stack.push(4);
+stack.push(2);
 stack.push(1);
 stack.display();
 console.log(stack.isPalindrome());

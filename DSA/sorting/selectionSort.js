@@ -1,6 +1,6 @@
-// seletionSort
+// selectionSort
 
-const seletionSort = (arr) => {
+const selectionSort = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     let min = i;
     for (let j = i + 1; j < arr.length; j++) {
@@ -8,7 +8,7 @@ const seletionSort = (arr) => {
         min = j;
       }
     }
-    let temp = arr[min];
+    const temp = arr[min];
     arr[min] = arr[i];
     arr[i] = temp;
   }
@@ -16,4 +16,4 @@ const seletionSort = (arr) => {
 };
 
 const arr = [4, 3, 6, 7, 2, 5, 1];
-console.log(seletionSort(arr));
+console.log(selectionSort(arr));

@@ -1,4 +1,5 @@
 // file that demonstrates is the queue palindrome or not
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -22,11 +23,11 @@ class Queue {
   }
   isPalindrome() {
     if (this.front === null) {
-      console.log("queue is underflow");
+      console.log("queue underflow");
       return false;
     }
-    let check = [];
     let current = this.front;
+    let check = [];
     while (current !== null) {
       check.push(current.value);
       current = current.next;

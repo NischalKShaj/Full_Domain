@@ -1,3 +1,5 @@
+// file to check whether the given input is valid parentheses
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -20,23 +22,23 @@ class Stack {
   }
   pop() {
     if (this.top === null) {
-      console.log("stack undeflow");
-      return false;
+      console.log("stack underflow");
+      return;
     }
-    let popped = this.top.value;
+    const poppedVal = this.top.value;
     this.top = this.top.next;
-    return popped;
+    return poppedVal;
   }
-  isValid(paranthesis) {
+  validParentheses(parentheses) {
     const stack = new Stack();
-    for (let i = 0; i < paranthesis.length; i++) {
-      let char = paranthesis[i];
+    for (let i = 0; i < parentheses.length; i++) {
+      let char = parentheses[i];
       if (char === "(" || char === "[" || char === "{") {
         stack.push(char);
       } else if (char === ")" || char === "]" || char === "}") {
         let popped = stack.pop();
         if (
-          (popped === "(" && char !== ")") ||
+          (popped === "(" && char !== "(") ||
           (popped === "[" && char !== "]") ||
           (popped === "{" && char !== "}")
         ) {
@@ -49,5 +51,4 @@ class Stack {
 }
 
 const stack = new Stack();
-const input = "[]";
-console.log(stack.isValid(input));
+console.log(stack.validParentheses("[]"));

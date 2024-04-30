@@ -5,10 +5,9 @@ const merge = (arr) => {
     return arr;
   }
   let mid = Math.floor(arr.length / 2);
-  let left = arr.slice(0, mid);
-  let right = arr.slice(mid);
-
-  return mergeSort(merge(left), merge(right));
+  let leftChild = arr.slice(0, mid);
+  let rightChild = arr.slice(mid);
+  return mergeSort(merge(leftChild), merge(rightChild));
 };
 
 const mergeSort = (left, right) => {

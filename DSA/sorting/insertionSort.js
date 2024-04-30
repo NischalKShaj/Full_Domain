@@ -12,6 +12,5 @@ const insertionSort = (arr) => {
   }
   return arr;
 };
-
 const arr = [4, 3, 2, 7, 9, 5];
 console.log(insertionSort(arr));

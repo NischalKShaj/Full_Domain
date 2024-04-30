@@ -9,8 +9,8 @@ class Node {
 
 class Stack {
   constructor() {
-    this.length = 0;
     this.top = null;
+    this.length = 0;
   }
   push(value) {
     const newNode = new Node(value);
@@ -23,24 +23,31 @@ class Stack {
       this.length++;
     }
   }
-  middle() {
-    const mid = Math.floor(this.length / 2);
-    this.popMid(mid);
-  }
-  popMid(mid) {
+  pop() {
     if (this.top === null) {
       console.log("stack underflow");
       return false;
     }
-    let index = 0;
+    this.top = this.top.next;
+  }
+  mid() {
+    const middle = Math.floor(this.length / 2);
+    this.removeMid(middle);
+  }
+  removeMid(middle) {
+    if (this.top === null) {
+      console.log("stack underflow");
+      return false;
+    }
     let current = this.top;
-    while (index < mid - 1) {
+    let index = 0;
+    while (index < middle - 1) {
       current = current.next;
       index++;
     }
     if (current === null) {
-      console.log("value not found in stack");
-      return;
+      console.log("node not found");
+      return false;
     }
     current.next = current.next.next;
   }
@@ -60,5 +67,5 @@ stack.push(3);
 stack.push(4);
 stack.push(5);
 stack.display();
-stack.middle();
+stack.mid();
 stack.display();
