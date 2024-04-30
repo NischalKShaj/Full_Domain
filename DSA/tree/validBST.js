@@ -16,7 +16,6 @@ class BST {
     const node = new Node(value);
     if (this.root === null) {
       this.root = node;
-      return;
     } else {
       this.insertChild(this.root, node);
     }
@@ -37,8 +36,8 @@ class BST {
     }
   }
   isBST() {
-    let prev = -Infinity;
     let valid = true;
+    let prev = -Infinity;
     function isValid(node) {
       if (node !== null && valid) {
         isValid(node.left);
