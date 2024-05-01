@@ -35,9 +35,10 @@ class BST {
       }
     }
   }
+  // checking valid binary tree
   isBST() {
-    let valid = true;
     let prev = -Infinity;
+    let valid = true;
     function isValid(node) {
       if (node !== null && valid) {
         isValid(node.left);

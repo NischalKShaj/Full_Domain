@@ -21,32 +21,32 @@ class MaxHeap {
     }
   }
   extractMax() {
-    let largest = this.heap[0];
+    let max = this.heap[0];
     this.heap[0] = this.heap.pop();
     this.heapifyDown();
-    return largest;
+    return max;
   }
   heapifyDown() {
     let current = 0;
     while (true) {
+      let largest = current;
       let leftChild = 2 * current + 1;
       let rightChild = 2 * current + 2;
-      let largest = current;
       if (
         leftChild < this.heap.length &&
-        this.heap[leftChild] < this.heap[largest]
+        this.heap[leftChild] > this.heap[largest]
       ) {
         largest = leftChild;
       }
       if (
         rightChild < this.heap.length &&
-        this.heap[rightChild] < this.heap[largest]
+        this.heap[rightChild] > this.heap[largest]
       ) {
         largest = rightChild;
       }
       if (largest !== current) {
         this.swap(current, largest);
-        largest = current;
+        current = largest;
       } else {
         break;
       }

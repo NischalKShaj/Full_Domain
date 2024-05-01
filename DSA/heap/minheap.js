@@ -29,9 +29,9 @@ class MinHeap {
   heapifyDown() {
     let current = 0;
     while (true) {
+      let smallest = current;
       let leftChild = 2 * current + 1;
       let rightChild = 2 * current + 2;
-      let smallest = current;
       if (
         leftChild < this.heap.length &&
         this.heap[leftChild] < this.heap[smallest]
@@ -53,7 +53,7 @@ class MinHeap {
     }
   }
   swap(current, parent) {
-    let temp = this.heap[current];
+    const temp = this.heap[current];
     this.heap[current] = this.heap[parent];
     this.heap[parent] = temp;
   }

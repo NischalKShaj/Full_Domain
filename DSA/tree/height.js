@@ -1,4 +1,4 @@
-// file to show the tree travesals inorder preorder and postorder
+// file to find the height of the tree
 
 class Node {
   constructor(value) {
@@ -8,7 +8,7 @@ class Node {
   }
 }
 
-class BST {
+class Tree {
   constructor() {
     this.root = null;
   }
@@ -35,7 +35,17 @@ class BST {
       }
     }
   }
-  // in-order traversal
+  //   function to calculate the height of the tree
+  getHeight(node) {
+    if (node === null) {
+      return -1;
+    } else {
+      let leftChild = this.getHeight(node.left);
+      let rightChild = this.getHeight(node.right);
+
+      return Math.max(leftChild, rightChild) + 1;
+    }
+  }
   inOrder(node, callback) {
     if (node !== null) {
       this.inOrder(node.left, callback);
@@ -43,42 +53,18 @@ class BST {
       this.inOrder(node.right, callback);
     }
   }
-  // pre-order traversal
-  preOrder(node, callback) {
-    if (node !== null) {
-      callback(node.value);
-      this.preOrder(node.left, callback);
-      this.preOrder(node.right, callback);
-    }
-  }
-  // post-order traversal
-  postOrder(node, callback) {
-    if (node !== null) {
-      this.postOrder(node.left, callback);
-      this.postOrder(node.right, callback);
-      callback(node.value);
-    }
-  }
 }
 
-const tree = new BST();
+const tree = new Tree();
 tree.insert(3);
 tree.insert(4);
-tree.insert(9);
-tree.insert(6);
+tree.insert(7);
 tree.insert(8);
+tree.insert(6);
 let res = [];
-let res1 = [];
-let res2 = [];
 tree.inOrder(tree.root, (value) => {
   res.push(value);
 });
 console.log(res);
-tree.preOrder(tree.root, (value) => {
-  res1.push(value);
-});
-console.log(res1);
-tree.postOrder(tree.root, (value) => {
-  res2.push(value);
-});
-console.log(res2);
+let max_height = tree.getHeight(tree.root);
+console.log(max_height);

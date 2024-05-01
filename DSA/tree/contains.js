@@ -7,6 +7,7 @@ class Node {
     this.right = null;
   }
 }
+
 class BST {
   constructor() {
     this.root = null;
@@ -15,13 +16,12 @@ class BST {
     const node = new Node(value);
     if (this.root === null) {
       this.root = node;
-      return;
     } else {
       this.insertChild(this.root, node);
     }
   }
   insertChild(root, node) {
-    if (node.value < root.value) {
+    if (node.value <= root.value) {
       if (root.left === null) {
         root.left = node;
       } else {
@@ -48,11 +48,11 @@ class BST {
     }
     return false;
   }
-  inorder(node, callback) {
+  inOrder(node, callback) {
     if (node !== null) {
-      this.inorder(node.left, callback);
+      this.inOrder(node.left, callback);
       callback(node.value);
-      this.inorder(node.right, callback);
+      this.inOrder(node.right, callback);
     }
   }
 }
@@ -63,9 +63,9 @@ tree.insert(6);
 tree.insert(3);
 tree.insert(7);
 tree.insert(21);
-console.log(tree.contains(7));
+console.log(tree.contains(21));
 let res = [];
-tree.inorder(tree.root, (value) => {
+tree.inOrder(tree.root, (value) => {
   res.push(value);
 });
 console.log(res);
