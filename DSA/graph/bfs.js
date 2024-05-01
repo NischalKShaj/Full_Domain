@@ -9,7 +9,7 @@ class Graph {
       this.vertices.set(data, []);
     }
   }
-  insert(vertex, edge, bidirectional = true) {
+  insert(vertex, edge, bidirectional) {
     if (!this.vertices.has(vertex)) {
       this.addVertices(vertex);
     }
@@ -23,25 +23,25 @@ class Graph {
   }
   display() {
     let res = "";
-    for (const [vertex, neighbour] of this.vertices) {
-      res += `${vertex}: ${neighbour.join(", ")}\n`;
+    for (const [edge, vertex] of this.vertices) {
+      res += `${edge}: ${vertex.join(", ")}\n`;
     }
     return res;
   }
   bfs(startIndex) {
-    const visited = new Set();
-    this.traverse(startIndex, visited);
+    let visited = new Set();
+    this.traversal(startIndex, visited);
   }
-  traverse(startIndex, visited) {
-    const queue = [startIndex];
+  traversal(startIndex, visited) {
+    let queue = [startIndex];
     visited.add(startIndex);
     while (queue.length > 0) {
       let current = queue.shift();
       console.log(current);
-      for (const neighbour of this.vertices.get(current)) {
-        if (!visited.has(neighbour)) {
-          visited.add(neighbour);
-          queue.push(neighbour);
+      for (const neighbor of this.vertices.get(current)) {
+        if (!visited.has(neighbor)) {
+          visited.add(neighbor);
+          queue.push(neighbor);
         }
       }
     }
