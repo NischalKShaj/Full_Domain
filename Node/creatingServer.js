@@ -2,16 +2,16 @@
 
 const http = require("http");
 
-const createServer = (req, res) => {
-  res.write("hello");
+const creatingServer = (req, res) => {
+  res.write("Hello");
   res.end();
 };
 
-const server = http.createServer(createServer);
+const server = http.createServer(creatingServer);
 
 const port = 3000;
 
 server.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
-// content from the file fs.js//
+// this is written using the appendFile fs module// this is written using the appendFile fs module

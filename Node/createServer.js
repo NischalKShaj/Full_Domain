@@ -1,1 +1,1 @@
-// content from the file fs.js
+//this is written using the writeFile fs module

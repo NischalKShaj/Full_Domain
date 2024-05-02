@@ -1,49 +1,40 @@
 // file to show the working of the childProcess fork and spawn
-const { fork, spawn, execFile, exec } = require("child_process");
+const { fork, spawn, exec, execFile } = require("child_process");
 
-// creating a fork
-const childProcess = fork("child.js");
+// creating fork using the childprocess
+const forking = fork("child.js");
 
-childProcess.on("message", (message) => {
-  console.log("Received message from the parent", message);
+forking.on("message", (message) => {
+  console.log(message);
 });
 
-// creating a spawn
+// creating spawn using childprocess
 const node = "node";
 const version = ["--version"];
+const spawning = spawn(node, version);
 
-const nodeVersion = spawn(node, version);
-
-nodeVersion.stdout.on("data", (data) => {
-  console.log(`current version of node is ${data}`);
+spawning.stdout.on("data", (data) => {
+  console.log(data.toString());
 });
 
-nodeVersion.stderr.on("error", (error) => {
-  console.log("error occured: ", error);
-});
-
-nodeVersion.on("close", (code) => {
-  console.log("process exited with code : ", code);
-});
-
-// creating execFile
-execFile("node", ["newFile.js"], (error, stdout, stderr) => {
-  if (error) {
-    console.log("error occured : ", error);
-  }
-  if (stderr) {
-    console.log("stderror :", stderr);
-  }
-  console.log("stdout : ", stdout);
-});
-
-// creating exec
+// creating an exec childprocess
 exec("ls -l", (error, stdout, stderr) => {
   if (error) {
-    console.log("error ocurred in the exec: ", error);
+    console.log(error);
   }
   if (stderr) {
-    console.log("stderr: ", stderr);
+    console.log(stderr);
   }
-  console.log("stdout: ", stdout);
+  console.log(stdout);
+});
+
+// creating an execFile childprocess
+execFile("node", ["newFile.js"], (error, stdout, stderr) => {
+  if (error) {
+    console.log(error);
+  }
+  if (stderr) {
+    console.log(stderr);
+  }
+  console.log(stdout);
 });

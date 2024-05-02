@@ -7,36 +7,38 @@ const { Duplex, Transform } = require("stream");
 const readableStream = fs.createReadStream("testing.txt");
 
 readableStream.on("data", (chunk) => {
-  console.log("reading the data:", chunk.toString());
+  console.log(chunk.toString());
 });
 
 // writable stream
 const writableStream = fs.createWriteStream("output.txt");
 
-writableStream.write("This file is created using writable stream");
+writableStream.write(
+  "data from the stream.js using the method writable Stream"
+);
 writableStream.end();
 
-// creating a duplex
+// duplex stream
 const duplex = new Duplex({
   write(chunk, encoding, callback) {
-    console.log("received the chunk", chunk.toString());
+    console.log("duplex data : ", chunk.toString());
+    callback();
+  },
+});
+
+duplex.write("hello");
+duplex.end();
+
+// transform stream
+const transform = new Transform({
+  write(chunk, encoding, callback) {
+    console.log("modified data : ", chunk.toString().toUpperCase());
     callback();
   },
   read(size) {},
 });
 
-duplex.write("Hello");
-duplex.end();
+transform.write("hello");
+transform.end();
 
-// creating a transform stream
-const transformStream = new Transform({
-  transform(chunk, encoding, callback) {
-    this.push(chunk.toString().toUpperCase());
-    callback();
-  },
-});
-
-transformStream.write("Hello\n");
-transformStream.end();
-// takes the input and then it will be passed to the stream and processes
-process.stdin.pipe(transformStream).pipe(process.stdout);
+process.stdin.pipe(transform).pipe(process.stdout);

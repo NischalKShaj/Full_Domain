@@ -2,5 +2,6 @@
 const greet = (message) => {
   process.send(message);
 };
-greet("message to parent process");
-console.log("successfully transfered");
+
+greet("hello this is my message");
+console.log("data successfully transferred");
