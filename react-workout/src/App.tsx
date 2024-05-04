@@ -1,7 +1,8 @@
 // import { useState } from "react";
 import "./App.css";
-import ReduxTheme from "./components/ReduxTheme";
-import ReduxToggle from "./components/ReduxToggle";
+// import ReduxTheme from "./components/ReduxTheme";
+// import ReduxToggle from "./components/ReduxToggle";
+import UseCallback from "./components/UseCallback";
 // import ReduxCounterShow from "./components/ReduxCounterShow";
 // import ChangeTheme from "./components/ChangeTheme";
 // import ShowButton from "./components/ShowButton";
@@ -18,8 +19,7 @@ import ReduxToggle from "./components/ReduxToggle";
 const App = () => {
   return (
     <div>
-      <ReduxTheme />
-      <ReduxToggle />
+      <UseCallback />
     </div>
   );
 };
