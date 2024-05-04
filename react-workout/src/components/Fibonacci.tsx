@@ -1,3 +1,5 @@
+// showing how to use useMemo()
+
 import React, { useMemo, useState } from "react";
 
 const Fibonacci = () => {
@@ -18,7 +20,7 @@ const Fibonacci = () => {
     return b;
   };
 
-  const memorize = useMemo(() => {
+  const memorized = useMemo(() => {
     return fibonacci(parseInt(input));
   }, [input]);
 
@@ -27,14 +29,14 @@ const Fibonacci = () => {
   };
 
   const handleClick = () => {
-    setFib(memorize);
+    setFib(memorized);
     setInput("");
   };
 
   return (
     <div>
       <input type="text" onChange={handleChange} value={input} />
-      <button onClick={handleClick}>find</button>
+      <button onClick={handleClick}>calculate</button>
       <h3>{fib}</h3>
     </div>
   );

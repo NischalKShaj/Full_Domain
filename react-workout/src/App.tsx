@@ -1,32 +1,25 @@
 // import { useState } from "react";
 import "./App.css";
-// import TodoTask from "./components/TodoTask";
-// import ShowCounter from "./components/ShowCounter";
-// import CounterApplication from "./components/CounterApplication";
-// import AddTaskTodo from "./components/AddTaskTodo";
-// import ShowTask from "./components/ShowTask";
-// import Test from "./components/Test";
-// import ReduxThemeText from "./components/ReduxThemeText";
-// import ReduxThemeToggle from "./components/ReduxThemeToggle";
-// import Counter from "./components/Counter";
-// import ShowCustomHook from "./components/ShowCustomHook";
-// import Timer from "./components/Timer";
-// import CounterButton from "./components/CounterButton";
-// import { contextProvider } from "./context/ContextProvider";
-// import ShowCount from "./components/ShowCount";
-// import Button from "./components/Button";
-// import CounterState from "./components/CounterState";
+import ReduxTheme from "./components/ReduxTheme";
+import ReduxToggle from "./components/ReduxToggle";
+// import ReduxCounterShow from "./components/ReduxCounterShow";
+// import ChangeTheme from "./components/ChangeTheme";
+// import ShowButton from "./components/ShowButton";
+// import { themeContext } from "./context/ThemeContext";
 // import Todo from "./components/Todo";
-// import Example from "./components/Example";
-import Fibonacci from "./components/Fibonacci";
-// import { ThemeContext } from "./context/ThemeContext";
-// import ThemeButton from "./components/ThemeButton";
-// import ThemeText from "./components/ThemeText";
+// import { useState } from "react";
+// import ContextCount from "./components/ContextCount";
+// import CounterContextButton from "./components/CounterContextButton";
+// import { createCounterContext } from "./context/CounterContext";
+// import Counter from "./components/Counter";
+// import Fibonacci from "./components/Fibonacci";
+// import ShowCountCustom from "./components/ShowCountCustom";
 
 const App = () => {
   return (
     <div>
-      <Fibonacci />
+      <ReduxTheme />
+      <ReduxToggle />
     </div>
   );
 };

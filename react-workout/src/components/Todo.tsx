@@ -1,30 +1,36 @@
+// file to show the implementation of todo application using useState
+
 import React, { useState } from "react";
 
 const Todo = () => {
-  const [tasks, setTask] = useState<string[]>([]);
+  const [task, setTask] = useState<string[]>([]);
   const [input, setInput] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
 
-  const addTask = () => {
-    setTask([input, ...tasks]);
+  const handleClick = () => {
+    setTask([input, ...task]);
     setInput("");
   };
 
   const handleDelete = (index: number) => {
-    const updatedTasks = tasks.filter((value, i) => i !== index);
-    setTask(updatedTasks);
+    const updatedTask = task.filter((value, i) => {
+      return index !== i;
+    });
+    setTask(updatedTask);
   };
 
   return (
     <div>
-      <input type="text" value={input} onChange={handleChange} />
-      <button onClick={addTask}>enter</button>
-      {tasks.map((task, index) => (
-        <li key={index}>
-          {task} <button onClick={() => handleDelete(index)}>delete</button>
+      <input type="text" onChange={handleChange} value={input} />
+      <button onClick={handleClick}>add</button>
+
+      {task.map((tasks, i) => (
+        <li key={i}>
+          {tasks}
+          <button onClick={() => handleDelete(i)}>remove</button>
         </li>
       ))}
     </div>

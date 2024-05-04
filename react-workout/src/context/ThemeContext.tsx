@@ -1,11 +1,13 @@
+// file to create the context for changing theme
+
 import { createContext } from "react";
 
-interface CreateThemeContext {
+interface ThemeContext {
   theme: string;
-  toggleTheme: () => void;
+  toggle: () => void;
 }
 
-export const ThemeContext = createContext<CreateThemeContext>({
+export const themeContext = createContext<ThemeContext>({
   theme: "light",
-  toggleTheme: () => {},
+  toggle: () => {},
 });
