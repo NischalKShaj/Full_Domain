@@ -1,15 +1,16 @@
 // function to show the example of callback function
 
-const calculate = (num1, num2, callback) => {
-  const sum = num1 + num2;
-  callback(num1, num2, sum);
+const sum = (num1, num2, callback) => {
+  let sum = num1 + num2;
+  callback(sum);
 };
 
-const displaySum = (num1, num2, sum) => {
-  console.log(`sum of ${num1} + ${num2} = ${sum}`);
+const display = (sum) => {
+  console.log(sum);
 };
 
-const cal = calculate(2, 3, displaySum);
+const res = sum(1, 2, display);
+console.log(res);
 
 // example for callback hell
 const readFile = (filename, callback) => {

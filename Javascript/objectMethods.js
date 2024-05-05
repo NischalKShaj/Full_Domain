@@ -13,7 +13,7 @@ const obj = [
   },
 ];
 
-// object.entrires
+// object.entries
 console.log(Object.entries(obj));
 
 // object.keys

@@ -15,11 +15,11 @@ const del = arr.shift();
 console.log(del, arr);
 
 // unshift
-arr.unshift(1);
+arr.unshift(0);
 console.log(arr);
 
 // splice
-arr.splice(2, 1, 5, 6, 7);
+arr.splice(2, 1, 5, 6, 7, 8, 9);
 console.log(arr);
 
 // flat

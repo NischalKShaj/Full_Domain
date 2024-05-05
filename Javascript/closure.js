@@ -1,15 +1,13 @@
 // closure
 
 const outer = () => {
-  let val = "outer function";
+  let a = 10;
   const inner = () => {
-    console.log(val);
+    console.log(a);
   };
-  return inner;
+  inner();
 };
-
-const res = outer();
-res();
+outer();
 
 // example of nested closure
 const closure1 = () => {

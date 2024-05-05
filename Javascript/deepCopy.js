@@ -1,17 +1,12 @@
 // file to do deep copying an object
 
 const person = {
-  name: "John",
+  name: "Nischal",
   age: 22,
-  address: {
-    city: "Trivandrum",
-    state: "Kerala",
-  },
 };
 
-// performing deepcopy
 const deepCopy = JSON.parse(JSON.stringify(person));
-deepCopy.address.city = "Pathanamthitta";
+deepCopy.name = "Vishnu";
 
-console.log(deepCopy);
 console.log(person);
+console.log(deepCopy);

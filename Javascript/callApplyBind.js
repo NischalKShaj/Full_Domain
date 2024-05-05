@@ -1,21 +1,22 @@
 // program to demonstrate call apply bind
 const person1 = {
   name: "Nischal",
-  greet: function (msg) {
-    console.log(`${msg}, I am ${this.name}`);
+  domain: "Mern",
+  greet: function (message) {
+    console.log(`${message},I am ${this.name}, my domain is${this.domain} `);
   },
 };
 
 const person2 = {
   name: "Vishnu",
+  domain: "Mean",
 };
 
-person1.greet.call(person1, "Hello");
+person1.greet.call(person1, "Hi");
+person1.greet.apply(person2, ["Hello"]);
 
-person1.greet.apply(person2, ["Hi"]);
-
-const greet2 = person1.greet.bind(person2);
-greet2("Hey");
+const welcome = person1.greet.bind(person1, "Hey");
+welcome();
 
 // another example for call apply and bind
 const car = {

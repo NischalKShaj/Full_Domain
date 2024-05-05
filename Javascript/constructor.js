@@ -1,19 +1,18 @@
-// file to show the useage of constructor to create the objects
+// file to show the usage of constructor to create the objects
 
-function CreatePerson(name) {
+function CreatePersons(name) {
   this.name = name;
   this.greet = function () {
-    console.log(`Hello my name is ${this.name}`);
+    console.log(`Hi i am ${this.name}`);
   };
 }
 
-// creating function using prototype
-CreatePerson.prototype.welcome = function () {
-  console.log(`Welcome ${this.name}`);
+CreatePersons.prototype.welcome = function () {
+  console.log(`welcome ${this.name}`);
 };
 
-const person1 = new CreatePerson("Alice");
-const person2 = new CreatePerson("Bob");
+const person1 = new CreatePersons("Nischal");
+const person2 = new CreatePersons("Vishnu");
 person1.greet();
 person2.welcome();
 
